@@ -71,27 +71,32 @@ INSERT INTO movies (title) VALUES ('Avengers: Infinity War');
 -- ## Questions
 --
 -- 1.  Return ALL the data in the 'movies' table.
+SELECT * FROM MOVIES;
 -- 2.  Return ONLY the name column from the 'people' table
+ SELECT name FROM people;
 -- 3.  Oops! Someone at CodeClan spelled Michael's name wrong! Change it to reflect the proper spelling ('Michael Allen' should be 'Michael Allan').
+
+UPDATE people SET name = 'Michael Allan' WHERE name = 'Michael Allen';
+
 -- 4.  Return ONLY your name from the 'people' table.
+SELECT * FROM people WHERE id=6;
 -- 5.  The cinema is showing 'Batman Begins', but Batman is DC, not Marvel! Delete the entry from the 'movies' table.
+DELETE FROM movies WHERE title = 'Batman Begins';
+
 -- 6.  Create a new entry in the 'people' table with the name of one of the instructors.
+
+INSERT INTO people (name) VALUES ('Stevie');
 -- 7.  Colin Bell has decided to hijack our movie evening. Remove him from the table of people.
+DELETE FROM people WHERE name = 'Colin Bell';
 -- 8.  The cinema has just heard that they will be holding an exclusive midnight showing of 'Avengers: Infinity War'!! Create a new entry in the 'movies' table to reflect this.
+INSERT INTO movies (title) VALUES ('Avengers: Infinity War');
+
 -- 9.  The cinema would also like to make the Guardians movies a back to back feature. Find out the show time of "Guardians of the Galaxy" and set the show time of "Guardians of the Galaxy 2" to start two hours later.
---
+UPDATE movies SET show_time = '16.25' WHERE title = 'Guardians of the Galaxy 2';
 -- ## Extension
 --
 -- 1.  Research how to delete multiple entries from your table in a single command.
 
-
-UPDATE people SET name = 'Michael Allan' WHERE name = 'Michael Allen';
-
-DELETE FROM movies WHERE title = 'Batman Begins';
-
-DELETE FROM people WHERE name = 'Colin Bell';
-
-UPDATE movies SET show_time = '16.25' WHERE title = 'Guardians of the Galaxy 2';
 
 DELETE FROM movies WHERE id IN (1, 2, 3);
 
